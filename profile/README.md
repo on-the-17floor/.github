@@ -261,10 +261,46 @@
 <details>
   <summary><b>👾 스테이지 / 몬스터</b></summary>
   <h3><b>⭐ 재미요소</b></h3>
+  <ul>
+    <li>
+      몬스터 난이도
+      <p> 1라운드 </p>
+      <img src="https://github.com/user-attachments/assets/ece47b6d-2ef7-47c4-b6d0-41ae54c55e81" alt="image">
+      <p> 40라운드 </p>
+      <img src="https://github.com/user-attachments/assets/c79c926c-594e-472d-a0e3-4bfcea94a6ac" alt="image">
+    </li>
+    <li>
+      미션 몬스터 
+      이미지 - 용량 이슈 업로드 불가
+    </li>
+  </ul>
+  <h3><b>🔔 기능</b></h3>
+  <ul>
+    <li>
+      스테이지 플로우
+      <p>게임의 전반적인 흐름을 관리</p>
+      <img src="https://github.com/user-attachments/assets/12dbdbb9-3431-451d-8347-c0a67a9a97ba" alt="image">
+    </li>
+    <li>
+      몬스터 이동
+      <p>웨이 포인트 따라 이동</p>
+      <p>HP 바 회전</p>
+      <img src="https://github.com/user-attachments/assets/793d37b2-9f80-4dab-9e27-12646cb29ce5" alt="image">
+    </li>
+  </ul>
 </details>
 
 <details>
   <summary><b>📱 UI</b></summary>
+  <h3><b>🔔 기능</b></h3>
+  <ul>
+    <li>항상 화면에 표시되는 UI / 특정 상황에서만 표시되는 팝업 UI 분리</li>
+    <img src="https://github.com/user-attachments/assets/87fd42f8-3105-4bc3-85db-fd24f0227289" alt="image">
+    <li>OnShow()와 OnHide() 메서드를 통해 popup 수행</li>
+    <img src="https://github.com/user-attachments/assets/335b5e25-8d6f-4f5f-a5bd-0ea17d3ad069" alt="image">
+    <li>이미지</li>
+    <img src="https://github.com/user-attachments/assets/e7acf9cb-a6d9-4568-ab46-343c605e8851" alt="image">
+  </ul>
 </details>
 
 <details>
