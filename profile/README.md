@@ -103,7 +103,8 @@
         <li>추후 친구 찾기/추가 기능, 도전과제 기능을 추가하게 된다면 구글 플레이 게임즈를 이용해 구현할 수 있게 됨</li>
       </ul>
     </li>
-    <li><strong>이미지 : (추후 추가) (인게임 로그인 장면 캡쳐)</strong></li>
+    <li><strong>이미지 :</strong></li>
+      <img src="https://github.com/user-attachments/assets/60335c94-d05d-40d9-aa38-b128f6ac6aca" alt="image">
   </ul>
 </details>
 
@@ -212,7 +213,7 @@
   <img src="https://github.com/user-attachments/assets/2c152367-1a5e-40c6-8789-47fb59d3d8f3" alt="image">
 </details>
 <details>
-  <summary><b>🔆 인게임</b></summary>
+  <summary><b>🔆 3. 인게임</b></summary>
   <p>게임은 총 40라운드로 진행됩니다.</p>
   <p>10라운드마다 보스가 등장합니다</p>
   <img src="https://github.com/user-attachments/assets/9df1ec4e-7fa9-4dcb-b08f-1f214a5aee8c" alt="image">
@@ -270,8 +271,8 @@
       <img src="https://github.com/user-attachments/assets/c79c926c-594e-472d-a0e3-4bfcea94a6ac" alt="image">
     </li>
     <li>
-      미션 몬스터 
-      이미지 - 용량 이슈 업로드 불가
+      <p>미션 몬스터</p>
+      <img src="https://github.com/user-attachments/assets/b4881fa2-bc6e-40cf-b790-b7143eac74d0" alt="image">
     </li>
   </ul>
   <h3><b>🔔 기능</b></h3>
