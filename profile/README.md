@@ -380,6 +380,70 @@
 </details>
 
 ## ✨유저테스트 개선 사항
+<details>
+  <summary><b>1차 테스트 이후 반영했던 피드백 목록</b></summary>
+  <hr>
+  <details>
+    <summary><b>미션 쿨타임 텍스트 추가</b></summary>
+    <p>미션 쿨타임이 보이지않아 불편하다는 피드백 반영</p>
+    <img src="https://github.com/user-attachments/assets/abb852ac-3a99-4a2b-9135-18a8fb09ac19" alt="image">
+  </details>
+  <details>
+    <summary><b>재화 획득 알림 추가</b></summary>
+    <p>아무런 알림없이 재화가 바로들어와서 뭐때문에 획득했는지 알수없다는 피드백 반영</p>
+    <img src="https://github.com/user-attachments/assets/b7c8afe5-1153-4b02-a79e-5117ca17358b" alt="image">
+  </details>
+  <details>
+    <summary><b>게임 가이드 추가</b></summary>
+    <p>가이드 또는 튜토리얼이 필요하다는 피드백 반영</p>
+    <img src="https://github.com/user-attachments/assets/46e10c9f-6485-467e-af7a-5ae87ab5f0b1" alt="image">
+  </details>
+</details>
+
+<details>
+  <summary><b>2차 테스트 이후 반영했던 피드백 목록</b></summary>
+  <hr>
+  <details>
+    <summary>타워 정보 UI 변경</summary>
+    <ul>
+      <li>변경사항</li>
+      <dl>타워정보에 방어무시, 고유능력 정보 포함</dl>
+      <dl>타워 정보 UI 색 구분으로 가독성 올리기</dl>
+      <dl>타워 강화로 상승하는 공격력 수치 포함</dl>
+      <img src="https://github.com/user-attachments/assets/9151694a-9536-40a7-8dd3-d9d43b1618e4" alt="image">
+    </ul>
+  </details>
+  <details>
+    <summary>UI 개선</summary>
+    <ul>
+      <li>변경사항</li>
+      <dl>UI에 텍스트 추가 (강화 버튼 위에 “강화” 추가)</dl>
+      <dl>판매 UI에 판매 금액 표시 추가</dl>
+      <img src="https://github.com/user-attachments/assets/953c22de-4d24-4ea6-a1b3-9ffa4bef7673" alt="image">
+      <img src="https://github.com/user-attachments/assets/61c7ae34-931b-4bcf-a00c-da09bc9bcc53" alt="image">
+    </ul>
+  </details>
+  <details>
+    <summary>UI 개선 ( 강화 )</summary>
+    <ul>
+      <li>변경사항</li>
+      <dl>강화속 소모 텍스트 UI 변경</dl>
+      <dl>강화석 구매 교환 비율 및 확률 표기</dl>
+      <dl>강화수치 UI 변경</dl>
+      <img src="https://github.com/user-attachments/assets/7d25e358-0d18-4b2c-a4c0-fead5ac5a310" alt="image">
+    </ul>
+  </details>
+  <details>
+    <summary>UI 개선 ( 설정 )</summary>
+    <ul>
+      <li>변경사항</li>
+      <dl>인게임 사운드 조절 기능 추가</dl>
+      <dl>게임씬 내에 가이드 추가</dl>
+      <img src="https://github.com/user-attachments/assets/fab468e5-78f6-4319-8577-b009f61b0888" alt="image">
+      <img src="https://github.com/user-attachments/assets/7e8d18a5-4922-4ace-ba29-924eabef2cf9" alt="image">
+    </ul>
+  </details>
+</details>
 
 ## ✨팀원 구성 및 연락처
 [팀원 구성 (1)](https://www.notion.so/1fa2dc3ef514808bb7c0d267fdd072cb?pvs=21)
