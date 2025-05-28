@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/847ea062-8792-4f46-a8a6-50eb44ef1421)- 목차
+- 목차
   - [장르](#장르--3d-타워-디펜스)
   - [스토리](#스토리)
   - [개발 타임라인](#개발-타임라인)
