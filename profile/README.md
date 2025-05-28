@@ -7,7 +7,7 @@
   - [씬 구조](#씬-구조)
   - [MVP 기능구현](#mvp-기능구현)
   - [트러블 슈팅](#트러블-슈팅)
-  - [사용자 개선 사항](#사용자-개선-사항)
+  - [유저테스트 개선 사항](#유저테스트-개선-사항)
   - [팀원 구성 및 연락처](#팀원-구성-및-연락처)
 
 ![슬라이드2](https://github.com/user-attachments/assets/6b0f8a31-c8ec-4104-8a1c-0c608c92ab0a)
@@ -305,11 +305,81 @@
 
 <details>
   <summary><b>🗨️ 로컬라이징</b></summary>
+  <h3><b>🔔 기능</b></h3>
+  <ul>
+    <li>로컬라이제이션 테이블에서 key를 기반으로 다국어 문자열을 비동기로 불러옴</li>
+    <li>SetLocalizedResult("원하는 키")만 호출</li>
+    <img src="https://github.com/user-attachments/assets/f6a863b6-3731-4b7e-a626-eb4f00af87bc" alt="image">
+    <li>이미지</li>
+    <img src="https://github.com/user-attachments/assets/e6d4a646-c544-4f52-a2b6-c1a9e0a74c47" alt="image">
+  </ul>
+
 </details>
 
 ## ✨트러블 슈팅
+<details>
+  <summary><b>데이터 싱크 오류</b></summary>
+  <ul>
+    <li>🚫 문제: 서버에서 데이터를 받아오는 속도보다 각 매니저에서 데이터에 접근하는 속도가 더 빨라 오류가 발생.</li>
+    <li>🧾 시도: 데이터 싱크 매니저가 다른 매니저들보다 빠르게 실행되면 이 문제가 해결될 것이라고 생각해 Project Settings > Script Execution Order 를 통해 순서를 강제로 설정해줌.</li>
+    <li>💡 결과: 그러나 데이터 싱크 매니저가 먼저 실행되었음에도 서버에서 데이터를 다 내려받기 전에 다른 매니저가 실행되어서 의미가 없었음. </li>
+    <li>💡 해결: 씬을 새로 만들어서 그 씬 안에서 데이터를 내려받도록 함. 데이터를 모두 내려받으면 그 때 다른 매니저들이 있는 씬으로 이동하며 올바른 데이터에 접근할 수 있도록 조치.</li>
+  </ul>
+</details>
+<details>
+  <summary><b>이전 버전 데이터 캐싱 오류</b></summary>
+  <ul>
+    <li>처음 버전을 비교하는 기능을 넣었을 때, 버전 값을 1.0을 넣었다가 나중에 0.1로 변경하게됨</li>
+    <li>
+      🚫 문제: 데이터가 바뀐 이후로 종종 최신 데이터가 아닌 구버전의 데이터가 들어오는 경우가 생기기 시작함
+      <p>관찰 결과 10번의 1~2번 꼴로 발생. 처음엔 입력 실수나 초기화 오류를 의심했으나, 일관적으로 오류가 나는 것이 아니라 ‘종종’ 오류가 발생한다는 점에서 의아함을 느끼고 해당 현상을 겪은 사람이 더 있는지 알아보기 시작함.</p>
+    </li>
+    <img src="https://github.com/user-attachments/assets/06d08c0e-36ee-4309-b734-093a20c13f91" alt="image">
+    <li>
+      🧾 원인 발견:
+      <p> Firebase는 네트워크가 느리거나 끊겼을 때를 대비해 로컬에 데이터를 캐시해두고 사용함.</p>
+      <p> 때문에 인터넷 연결이 느리거나 끊겼을 때 앱이 실행되면, 서버와 sync되기 전에 로컬 캐시된 데이터를 먼저 받아오게 되면서 위와 같은 오류가 일어나는 것.</p>
+    </li>
+    <li>💡 해결 방식: 
+    <p> SetPersistenceEnabled(false)를 통해 로컬 캐시를 사용하지 않음을 명시함으로서 오류를 해결.</p>
+    <p> 이 코드를 추가한 뒤 부터는 같은 오류가 한 번도 일어나지 않음.</p>
+    <img src="https://github.com/user-attachments/assets/f51e6b92-f491-4c6a-9687-a712c451394a" alt="image">
+  </ul>
+</details>
 
-## ✨사용자 개선 사항
+<details>
+  <summary><b>모디움 InputSystem 오류</b></summary>
+  <ul>
+    <li>
+      Input System 충돌로 인한 트러블
+      <p>Modoium.Service.Input 과 UnityEngine.Input 이 충돌 → 트러블 발생</p>
+    </li>
+    <li>
+      ❓Modoium 에셋이 무엇인가
+      <p>https://modoium.com/kr/</p>
+      <p>유니티 프로젝트를 빌드 없이 모바일 환경에서 쉽게 테스트할 수 있게 해주는 도구이다.</p>
+    </li>
+    <li>
+      🚫  문제 상황
+      <p>Modoium을 프로젝트에 적용 후, 기존 InputSystem을 사용하는 기능이 작동하지 않는 문제가 발생 ( EventSystem, Input 등 )</p>
+    </li>
+    <li>
+      🧾 원인 파악
+      <p>버그가 발생하기 전 브런치와 현재 브런치의 차이점 비교</p>
+      <p>디버그용 브런치 생성하고, 체리픽(cherry-pick)을 통해 문제가 발생하는 시점을 찾음</p>
+      <p>테스트를 위해 Modoium을 제거했더니 기존 InputSystem의 기능이 정상 작동하는 것을 확인</p>
+    </li>
+    <li>
+      💡 해결 방법
+      <p>Modoium 공식 문서의 프로그래밍 가이드를 참고한 결과 Unity의 새로운 InputSystem을 사용할 것을 권장하고 있음.</p>
+      <p>프로젝트에서 이전 Input System을 사용하고 있었기 때문에 충돌이 발생한 것으로 확인</p>
+      <p>새로운 InputSystem 패키지를 프로젝트에 설치하여 문제 해결</p>
+    </li>
+  </ul>
+  <img src="https://github.com/user-attachments/assets/6f380a8c-7f05-4016-a64d-f8e331375981" alt="image">
+</details>
+
+## ✨유저테스트 개선 사항
 
 ## ✨팀원 구성 및 연락처
 [팀원 구성 (1)](https://www.notion.so/1fa2dc3ef514808bb7c0d267fdd072cb?pvs=21)
