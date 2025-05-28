@@ -12,6 +12,7 @@
   - [팀원 구성 및 연락처](#팀원-구성-및-연락처)
 
 ## 🎥소개 영상
+### 💻[Youtube](https://www.youtube.com/watch?v=mMHKCJFJ4dA)
 https://github.com/user-attachments/assets/530f48b2-0902-4842-aced-3b767d5059ea
 
 ![슬라이드2](https://github.com/user-attachments/assets/6b0f8a31-c8ec-4104-8a1c-0c608c92ab0a)
